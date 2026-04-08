@@ -1,38 +1,43 @@
 export default function HeroContent() {
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
-    <main className="absolute bottom-8 left-8 z-20 max-w-lg">
-      <div className="text-left">
-        <div
-          className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 backdrop-blur-sm mb-4 relative"
-          style={{
-            filter: "url(#glass-effect)",
-          }}
-        >
-          <div className="absolute top-0 left-1 right-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full" />
-          <span className="text-white/90 text-xs font-light relative z-10">Новые шейдеры Paper Design</span>
-        </div>
+    <main id="hero" className="min-h-screen flex items-center justify-start px-8 pt-20">
+      <div className="max-w-6xl mx-auto w-full flex items-center">
+        <div className="max-w-xl">
+          <div
+            className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm mb-6 border border-white/20"
+          >
+            <div className="w-2 h-2 rounded-full bg-orange-300 mr-2 animate-pulse" />
+            <span className="text-white/90 text-xs font-light">Внутренняя платформа · Райтек Россия</span>
+          </div>
 
-        {/* Main Heading */}
-        <h1 className="text-5xl md:text-6xl md:leading-16 tracking-tight font-light text-white mb-4">
-          <span className="font-medium italic">Красивые</span> шейдеры
-          <br />
-          <span className="font-light tracking-tight text-white">и эффекты</span>
-        </h1>
+          <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 leading-tight tracking-tight uppercase">
+            Ваш голос<br />
+            <span className="text-orange-300">важен</span>
+          </h1>
 
-        {/* Description */}
-        <p className="text-xs font-light text-white/70 mb-4 leading-relaxed">
-          Создавайте впечатляющие визуальные эффекты с передовой технологией шейдеров. Интерактивное освещение,
-          плавные анимации и красивые эффекты, реагирующие на каждое движение.
-        </p>
+          <p className="text-base font-light text-white/75 mb-8 leading-relaxed">
+            Анонимная платформа обратной связи, где каждое мнение учитывается.
+            Делитесь идеями, предложениями и наблюдениями — помогайте компании становиться лучше.
+          </p>
 
-        {/* Buttons */}
-        <div className="flex items-center gap-4 flex-wrap">
-          <button className="px-8 py-3 rounded-full bg-transparent border border-white/30 text-white font-normal text-xs transition-all duration-200 hover:bg-white/10 hover:border-white/50 cursor-pointer">
-            Тарифы
-          </button>
-          <button className="px-8 py-3 rounded-full bg-white text-black font-normal text-xs transition-all duration-200 hover:bg-white/90 cursor-pointer">
-            Начать
-          </button>
+          <div className="flex items-center gap-4 flex-wrap">
+            <button
+              onClick={() => scrollTo("contact")}
+              className="px-8 py-3 rounded-full bg-orange-400 hover:bg-orange-300 text-white font-medium text-sm transition-all duration-200 cursor-pointer shadow-lg shadow-orange-500/20"
+            >
+              Оставить отзыв
+            </button>
+            <button
+              onClick={() => scrollTo("how")}
+              className="px-8 py-3 rounded-full bg-transparent border border-white/30 text-white font-light text-sm transition-all duration-200 hover:bg-white/10 hover:border-white/50 cursor-pointer"
+            >
+              Как это работает
+            </button>
+          </div>
         </div>
       </div>
     </main>
