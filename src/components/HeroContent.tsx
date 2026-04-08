@@ -4,7 +4,7 @@ export default function HeroContent() {
   }
 
   return (
-    <main id="hero" className="min-h-screen flex items-center justify-start px-8 pt-20">
+    <main id="hero" className="min-h-screen flex items-center justify-start px-8 pt-20 relative z-10">
       <div className="max-w-6xl mx-auto w-full flex items-center">
         <div className="max-w-xl">
           <div
